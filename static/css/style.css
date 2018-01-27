@@ -6,6 +6,10 @@ nav{
 .especial{
     margin: 100px; border: 5px solid white; border-radius: 45px; padding: 100px; background-color:white; opacity:.5;  background-blend-mode: luminosity;
 }
+textarea{
+    height:100%;
+    width: 70%;
+}
 
 .especial:hover{
     opacity:1;
