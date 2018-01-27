@@ -7,5 +7,5 @@ app = Flask(__name__)
 def mainpage():
     return "sup dood"
 
-if __name__ == "main":
+if __name__ == "__main__":
     app.run()
