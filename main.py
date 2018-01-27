@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request
+from flask import Flask, render_template, session, request, redirect
 from utils import dbhelper as db
 
 #Send noots
@@ -23,12 +23,14 @@ def signup():
     if request.method == 'GET':
         return render_template("signup.html")
     elif request.method == 'POST':
-        uname = request.args.get("username")
-        hashpw = hash(request.args.get("password"))
+        uname = request.form["username"]
+        hashpw = hash(request.form["password"])
+        #print("Username requested:", uname, "Passhash:", hashpw)
         if db.nameAvailable(uname):
-            return "GOOD NEWS EVERYBODY"
+            db.execQuery("INSERT INTO ACCOUNTS VALUES (?, ?, ?, ?)", (db.getNewId("ACCOUNTS"), uname, hashpw, 0))
+            return redirect("/login")
         else:
-            return "you lose"
+            return redirect("/signup")
 
 
 
