@@ -14,8 +14,8 @@ def login():
     if request.method == 'GET':
         return render_template("login.html")
     elif request.method == 'POST':
-        uname = request.args.get("username")
-        hashpw = hash(request.args.get("password"))
+        uname = request.form["username"]
+        hashpw = hash(request.form["password"])
         return str(db.checkLogin(uname, hashpw))
 
 @app.route("/signup", methods = ['GET', 'POST'])

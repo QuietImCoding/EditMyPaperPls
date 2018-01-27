@@ -30,7 +30,8 @@ def nameAvailable(uname):
 
 
 def checkLogin(uname, hashpw):
-    cur.execute("SELECT * FROM ACCOUNTS WHERE USRNAME == ? AND HASHPASS == ?", (uname,hashpw))
+    cur.execute("SELECT * FROM ACCOUNTS WHERE USRNAME = ? AND HASHPASS = ?", (uname,hashpw))
     result = cur.fetchone()
+    print(result)
     return result
 
