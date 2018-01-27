@@ -2,6 +2,13 @@ nav{
     display:inline;
     width: 100%;
 }
+.especial{
+    margin: 100px; border: 5px solid white; border-radius: 45px; padding: 100px; background-color:white; opacity:.5;  background-blend-mode: luminosity;
+}
+
+.especial:hover{
+    opacity:1;
+}
 nav a{
     background-color: #539987;
     border-right-color: white;
@@ -41,4 +48,7 @@ body{
     border-radius:10px;
     color: white;
     text-decoration:none;
+}
+p{
+
 }
