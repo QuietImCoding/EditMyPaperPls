@@ -17,14 +17,14 @@
     <div id="content">
         <h2>My Activity</h2>
         <h3>Notifications</h3>
-            {% if essayEdited}
-                <a href="/essays">Your Essay has been edited!</a>
-            {% if morePoints}
+            {% if essayEdited %}
+                <a href="/myessays.html">Your Essay has been edited!</a>
+            {% if morePoints %}
                 <p>You have gained {{numAddPoints}}! </p>
-            {%else}
+            {% else %}
                 <p> No notifications to display.</p>
-        <a href="essays.html"> <h3>Your Essays</h3> </a>
-        <a href="edits.html"> <h3>Your Edits</h3> </a>
+        <a href="myessays.html"> <h3>Your Essays</h3> </a>
+        <a href="myedits.html"> <h3>Your Edits</h3> </a>
     </div>
     </body>
 </html>

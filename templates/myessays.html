@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Essays</title>
+</head>
+<body>
+<h1>My Essays</h1>
+<div id="content">
+    <ul>
+        {% for essays in myessays %}
+        <li> <a href="{{essay.link}}">{{essay.title}}</a> </li>
+        {% end for %}
+    </ul>
+
+</div>
+</body>
+</html>
