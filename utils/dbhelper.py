@@ -22,3 +22,16 @@ def getNewId(table):
         return max(ids) + 1
     else:
         return 0
+
+def nameAvailable(uname):
+    cur.execute("SELECT * FROM ACCOUNTS WHERE USRNAME = ?", (uname,))
+    result = cur.fetchone()
+    return result is None
+
+
+def checkLogin(uname, hashpw):
+    cur.execute("SELECT * FROM ACCOUNTS WHERE USRNAME = ? AND HASHPASS = ?", (uname,hashpw))
+    result = cur.fetchone()
+    print(result)
+    return result
+
