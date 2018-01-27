@@ -1,32 +1,7 @@
-nav{
-    display:inline;
-    padding: 30px;
-    width: 100%;
-}
-.especial{
-    margin: 100px; border: 5px solid white; border-radius: 45px; padding: 100px; background-color:white; opacity:.5;  background-blend-mode: luminosity;
-}
-textarea{
-    height:100%;
-    width: 70%;
-}
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-.especial:hover{
-    opacity:1;
-}
-nav a{
-    text-decoration:none;
-    padding: 30px;
-    padding-top:30px;
-}
-a h1{
-    text-decoration: none;
-    font-weight:normal;
-    font-size: 18px;
-    display:inline;
-    padding: 20px;
-}
 body{
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
     display: grid;
     min-height:100%;
@@ -41,6 +16,36 @@ body{
     grid-template-areas: "nav"
         "content"
 }
+html{
+    min-width:100%;
+    min-height:100%;
+}
+nav{
+    display:inline;
+    padding: 30px;
+    width: 100%;
+}
+.especial{
+    margin: 100px; border: 5px solid white; border-radius: 45px; padding: 100px; background-color:white; opacity:.5;  background-blend-mode: luminosity;
+}
+textarea{
+ width:70%;
+ height:100%;
+}
+
+nav a{
+    text-decoration:none;
+    padding: 30px;
+    padding-top:30px;
+}
+a h1{
+    text-decoration: none;
+    font-weight:normal;
+    font-size: 18px;
+    display:inline;
+    padding: 20px;
+}
+
 .button{
     margin: 20px;
     padding: 20px 30px;
@@ -52,5 +57,5 @@ body{
 p{
 
 }
-content{
+.content{
 }
