@@ -42,3 +42,8 @@ def getPWHash(uname):
         return result[0]
     else:
         return result
+
+
+def getEssay(paper_id):
+    cur.execute("SELECT * FROM PAPERS WHERE PAPER_ID = ?", (paper_id,))
+    result = cur.fetchone()
