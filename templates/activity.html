@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit My Paper Pls - Home</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <a href="/"> <h1>Edit My Paper Pls</h1> </a>
+            <a href="/activity.html"> My Activity </a>
+            <a href="/edit.html"> Edit </a>
+            <a href="/upload.html"> Upload </a>
+        </nav>
+    </header>
+    <div id="content">
+        <h2>My Activity</h2>
+        <h3>Notifications</h3>
+            {% if essayEdited}
+                <a href="/essays">Your Essay has been edited!</a>
+            {% if morePoints}
+                <p>You have gained {{numAddPoints}}! </p>
+            {%else}
+                <p> No notifications to display.</p>
+        <a href="essays.html"> <h3>Your Essays</h3> </a>
+        <a href="edits.html"> <h3>Your Edits</h3> </a>
+    </div>
+    </body>
+</html>
