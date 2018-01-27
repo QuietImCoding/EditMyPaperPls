@@ -3,6 +3,7 @@ from utils import dbhelper as db
 
 #Send noots
 app = Flask(__name__)
+db.getCursorFromFile("data/data.db")
 
 @app.route("/")
 def mainpage():
@@ -15,11 +16,20 @@ def login():
     elif request.method == 'POST':
         uname = request.args.get("username")
         hashpw = hash(request.args.get("password"))
-        return db.checkLogin(uname, hashpw)
+        return str(db.checkLogin(uname, hashpw))
 
-@app.route("/signup")
+@app.route("/signup", methods = ['GET', 'POST'])
 def signup():
-    return "hi"
+    if request.method == 'GET':
+        return render_template("signup.html")
+    elif request.method == 'POST':
+        uname = request.args.get("username")
+        hashpw = hash(request.args.get("password"))
+        if db.nameAvailable(uname):
+            return "GOOD NEWS EVERYBODY"
+        else:
+            return "you lose"
+
 
 
 @app.route("/showaccounts")
