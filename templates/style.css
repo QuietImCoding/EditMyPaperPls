@@ -1,0 +1,44 @@
+nav{
+    display:inline;
+    width: 100%;
+}
+nav a{
+    background-color: #539987;
+    border-right-color: white;
+    text-decoration:none;
+    color:white;
+    padding: 30px;
+    padding-top:30px;
+}
+a h1{
+    color:#539987;
+    text-decoration: none;
+    font-weight:normal;
+    font-size: 18px;
+    display:inline;
+    background-color:white;
+    padding: 20px;
+}
+body{
+    text-align: center;
+    display: grid;
+    min-height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: inmax(50px,200px) auto;
+    grid-gap: 10px;
+    grid-template-areas: "nav"
+        "content"
+}
+.button{
+    margin: 20px;
+    padding: 20px 30px;
+    background-color:#539987;
+    border-radius:10px;
+    color: white;
+    text-decoration:none;
+}
