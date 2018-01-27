@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+<body>
+    <header>
+        <nav>
+            <a href="/"> <h1>Edit My Paper Pls</h1> </a>
+            <a href="/activity.html"> My Activity </a>
+            <a href="/edit.html"> Edit </a>
+            <a href="/upload.html"> Upload </a>
+        </nav>
+    </header>
+    <div id="content">
+        <h2>Essays that need Editing</h2>
+        <ul>
+            {% for essay in allessays %}
+            <li> <a href="{{essay.link}}">{{essay.title}}</a> </li>
+            {% end for %}
+        </ul>
+    </div>
+    </body>
+</html>
