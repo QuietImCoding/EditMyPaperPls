@@ -29,9 +29,8 @@ def nameAvailable(uname):
     return result is None
 
 
-def checkLogin(uname, hashpw):
-    cur.execute("SELECT * FROM ACCOUNTS WHERE USRNAME = ? AND HASHPASS = ?", (uname,hashpw))
+def getPWHash(uname):
+    cur.execute("SELECT PASSHASH FROM ACCOUNTS WHERE USRNAME = ?", (uname,))
     result = cur.fetchone()
-    print(result)
     return result
 
