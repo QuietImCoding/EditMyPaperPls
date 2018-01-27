@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def mainpage():
-    return render_template("homepage.html")
+    return render_template("index.html")
     # id = db.getNewId("ACCOUNTS")
     # db.execQuery("INSERT INTO ACCOUNTS VALUES (?,?,?,?)", (id, "dog" + str(id), "AAAA", 0))
     # return str(db.getNewId("ACCOUNTS"))
