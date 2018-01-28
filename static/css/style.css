@@ -7,8 +7,13 @@ body{
     margin:0;
     padding: 0;
 }
+.editor, #edit{
+    text-decoration: none;
+}
+
 .active{
     color:#70566D !important;
+    text-decoration:underline !important;
 }
 
 #form{
@@ -225,6 +230,7 @@ body{
 }
 .active{
     color:#70566D !important;
+    text-decoration: underline !important;
 }
 html{
     font-family: 'Quicksand', sans-serif;
@@ -318,6 +324,9 @@ li{
     text-decoration: none;
     list-style:none;
 
+}
+.editor, #edit{
+    text-decoration: none;
 }
 #essay{
     min-height:100%;
