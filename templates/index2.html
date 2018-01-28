@@ -1,26 +1,8 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Edit My Paper Pls - Home</title>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    </head>
-    <body>
-        <header>
-            <nav>
-                <a href="/"> <h1>Edit My Paper Pls</h1> </a>
-                <a href="/activity"> My Activity </a>
-                <a href="/edit"> Edit </a>
-                <a href="/upload"> Upload </a>
-                <a href="/logoff"> Logout </a>
-            </nav>
-        </header>
-
-        <content>
-            <h2>Welcome {{name}}!</h2>
-            <h3>You have {{numnotifications}} notifications.</h3>
-            <p>Total Points: {{mypoints}}</p>
-            <p>Essays Submitted: {{numessays}}</p>
-        </content>
-    </body>
-</html>
+{% extends "layout.html" %}
+{% block page %}Home{% endblock %}
+{% block content %}
+    <h2>Welcome {{name}}!</h2>
+    <h3>You have {{numnotifications}} notifications.</h3>
+    <p>Total Points: {{mypoints}}</p>
+    <p>Essays Submitted: {{numessays}}</p>
+{% endblock %}
