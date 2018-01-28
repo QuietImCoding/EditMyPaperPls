@@ -2,9 +2,7 @@
 {% block page %}My Essays{% endblock %}
 {% block content %}
     <h2>My Essays</h2>
-    <ul>
         {% for essay in myessays %}
-        <li> <a href="/essay/{{essay['id']}}">{{essay['title']}}</a> </li>
+        <p> <a href="/essay/{{essay['id']}}">{{essay['title']}}</a> </p>
         {% endfor %}
-    </ul>
 {% endblock %}

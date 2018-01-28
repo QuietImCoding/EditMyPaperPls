@@ -4,10 +4,10 @@
         <h2>Upload</h2>
         <input type="text" placeholder= "title" name="title" form="uploadform">
 <br />
-        <textarea name= "content" placeholder="Copy paste your essay in plain text here..." form="uploadform">
+        <textarea name= "content" rows="25" placeholder="Copy paste your essay in plain text here..." form="uploadform">
 
         </textarea>
         <form action="/upload" id="uploadform" method="POST">
-            <input type="submit" name = "submit">
+            <input type="submit" value="upload" name = "submit">
         </form>
 {% endblock %}
