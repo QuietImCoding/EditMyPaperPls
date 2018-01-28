@@ -60,7 +60,7 @@ def getEssay(paper_id):
     result = cur.fetchone()
     essay = {}
     essay["title"] = result[2]
-    essay["content"] = result[3]
+    essay["contents"] = result[3]
     essay["author"] = getAuthorName(result[1])
     print(result)
     return essay
@@ -69,4 +69,10 @@ def getEsssayList():
     cur.execute("SELECT * FROM PAPERS")
     result = cur.fetchall()
     papers = [{"id" : paper[0], "title" : paper[2]} for paper in result]
+    return papers
+
+def getEssaysByUser(user):
+    cur.execute("SELECT * FROM PAPERS WHERE AUTHOR_ID = ?", (getUserID(user),))
+    result = cur.fetchall()
+    papers = [{"id": paper[0], "title": paper[2]} for paper in result]
     return papers

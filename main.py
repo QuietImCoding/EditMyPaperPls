@@ -40,6 +40,10 @@ def showessay(paper_id):
 def edit():
     return render_template("edit.html", allessays = db.getEsssayList())
 
+@app.route("/myessays")
+def myessays():
+    return render_template("myessays.html", myessays = db.getEssaysByUser(session["username"]))
+
 @app.route("/home")
 def home():
     return render_template("index2.html")
