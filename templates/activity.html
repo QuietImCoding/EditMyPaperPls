@@ -20,10 +20,12 @@
         <h3>Notifications</h3>
             {% if essayEdited %}
                 <a href="/myessays">Your Essay has been edited!</a>
+            {% endif %}
             {% if morePoints %}
                 <p>You have gained {{numAddPoints}}! </p>
             {% else %}
                 <p> No notifications to display.</p>
+            {% endif %}
         <a href="/myessays"> <h3>Your Essays</h3> </a>
         <a href="/myedits"> <h3>Your Edits</h3> </a>
     </div>
