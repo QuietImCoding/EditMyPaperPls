@@ -71,6 +71,7 @@ editbtn.onclick = function(e) {
         ta.style.width = content.offsetWidth + "px";
         ta.style.height = content.offsetHeight + "px";
         ta.value = content.innerHTML;
+        ta.readOnly = true;
         var numlines = ta.value.split("\n").length;
         ta.onselect = function(e) {
             console.log(e);
@@ -111,6 +112,8 @@ editbtn.onclick = function(e) {
         content.appendChild(ta);
     } else {
         editbtn.innerText = "Edit";
+        var commentdiv = document.getElementById("blank");
+        commentdiv.innerHTML = "";
         if (comments.length > 0) {
             submitComments();
         }
