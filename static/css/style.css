@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-
 body{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
@@ -17,6 +16,7 @@ body{
         "content"
 }
 html{
+    font-family: 'Quicksand', sans-serif;
     min-width:100%;
     min-height:100%;
 }
