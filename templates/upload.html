@@ -1,21 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Upload</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-</head>
-<header>
-        <nav>
-            <a href="/"> <h1>Edit My Paper Pls</h1> </a>
-            <a href="/activity"> My Activity </a>
-            <a href="/edit"> Edit </a>
-            <a href="/logoff"> Logout </a>
-        </nav>
-</header>
-<body>
-    <h2>Upload</h2>
-    <div class="content">
+{% extends "layout.html" %}
+{% block page %}Upload{% endblock %}
+{% block content %}
+        <h2>Upload</h2>
         <p>Title:</p>
         <input type="text" placeholder= "title" name="title" form="uploadform">
         <br/>
@@ -25,8 +11,4 @@
         <form action="/upload" id="uploadform" method="POST">
             <input type="submit" name = "submit">
         </form>
-
-    </div>
-
-</body>
-</html>
+{% endblock %}
