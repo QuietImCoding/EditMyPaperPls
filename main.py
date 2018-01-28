@@ -21,7 +21,6 @@ def login():
         if not "username" in session.keys():
             uname = request.form["username"]
             pw = request.form["password"]
-            print("Username requested:", uname, "Passhash:", pw)
             pwhash =  db.getPWHash(uname)
             success =  pwhash is not None and bcrypt.hashpw(pw.encode("UTF-8"), pwhash) == pwhash
             if success:
@@ -34,7 +33,7 @@ def login():
 
 @app.route("/essay/<paper_id>")
 def showessay(paper_id):
-    return render_template("essay.html", essay = db.getEssay(paper_id))
+    return render_template("essay.html", essay = db.getEssay(paper_id), edits = db.getEditsForPaper(paper_id))
 
 @app.route("/edit")
 def edit():
@@ -69,9 +68,7 @@ def upload():
         title = request.form["title"]
         content = request.form["content"]
         newId = db.getNewId("PAPERS")
-        print("INSERTING PAPER FOR USER", session["username"], "WITH ID", newId)
         db.execQuery("INSERT INTO PAPERS VALUES (?, ?, ?, ?)", (newId, db.getUserID(session["username"]), title, content))
-        print(newId)
         return redirect("/activity")
 
 @app.route("/activity")

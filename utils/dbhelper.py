@@ -62,7 +62,6 @@ def getEssay(paper_id):
     essay["title"] = result[2]
     essay["contents"] = result[3]
     essay["author"] = getAuthorName(result[1])
-    print(result)
     return essay
 
 def getEsssayList():
@@ -81,3 +80,11 @@ def getPointsForUser(user):
     cur.execute("SELECT POINTS FROM ACCOUNTS WHERE USRNAME = ?", (user,))
     result = cur.fetchone()
     return result[0]
+
+def getEditsForPaper(paper_id):
+    cur.execute("SELECT EDITOR FROM EDITS WHERE PAPER = ?", (paper_id,))
+    editors =[]
+    for editor in cur.fetchall():
+        if editor[0] not in editors:
+            editors.append(editor[0])
+    return [{"author":editor} for editor in editors]
