@@ -300,13 +300,11 @@ li{
 }
 #show{
     text-align:left;
-    overflow:auto;
 }
 #wow{
     width:100%;
     text-align:left;
     padding: 30px;
-    overflow:auto;
 }
 #content{
     margin-left:40px;
