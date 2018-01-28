@@ -47,7 +47,7 @@ def myessays():
 
 @app.route("/home")
 def home():
-    return render_template("index2.html", mypoints = db.getPointsForUser(session["username"]), numessays = len(db.getEssaysByUser(session["username"])))
+    return render_template("index2.html", name = session["username"], mypoints = db.getPointsForUser(session["username"]), numessays = len(db.getEssaysByUser(session["username"])))
 
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():
@@ -93,6 +93,14 @@ def addcomments():
 @app.route("/showaccounts")
 def accounts():
     return str(db.viewAccounts())
+
+@app.route("/getCommentData", methods = ["POST"])
+def getCommentData():
+    paper = request.form["paper"]
+    author = request.form["author"]
+    return json.jsonify(db.getEditsForAuthor(paper, author))
+
+
 
 if __name__ == "__main__":
     app.debug = True

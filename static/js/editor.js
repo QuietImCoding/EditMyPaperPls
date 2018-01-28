@@ -8,13 +8,51 @@ if (loc.indexOf("#") != -1) {
 }
 var page = Number(loc.substring(loc.lastIndexOf("/") + 1));
 
+var editors = document.getElementsByClassName("editor");
 var content = document.getElementById("contents");
 var editbtn = document.getElementById("edit");
+
+for (var i = 0; i < editors.length; i++) {
+    editors[i].onclick = function(e) {
+        sendTehRequestForEdits(e.target.id);
+    }
+}
+
+var loadedComments;
+var sendTehRequestForEdits = function(author) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', "/getCommentData", true);
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhr.onload = function() {
+        loadedComments = []
+        var modified = content.innerHTML;
+        var obj = JSON.parse(this.responseText);
+        obj.sort(function(a, b) {
+            return(a.start - b.start);
+        });
+        console.log(obj);
+        offset = 0;
+        for (var i = 0; i < obj.length; i++) {
+            var spantag = '<span class="edited" id="' + i + '">'
+            modified = modified.substring(0, obj[i].start + offset + 1) + spantag +
+             modified.substring(obj[i].start+ offset, obj[i].end + offset + 1) +
+             '</span>' + modified.substring(obj[i].end + offset + 1, modified.length)
+             offset += spantag.length + 7;
+             loadedComments.push(obj[i].comment);
+        }
+        console.log(modified);
+    };
+    xhr.send("paper=" + page + "&author=" + author);
+};
+
+
 editbtn.onclick = function(e) {
     editing = !editing;
     if (editing) {
         editbtn.innerText = "Cancel Editing";
         var ta = document.createElement("TEXTAREA");
+        ta.style.width = content.offsetWidth + "px";
+        ta.style.height = content.offsetHeight + "px";
         ta.value = content.innerHTML;
         var numlines = ta.value.split("\n").length;
         ta.onselect = function(e) {
@@ -26,7 +64,7 @@ editbtn.onclick = function(e) {
             var header = document.createElement("H3");
             header.innerText = "Create a comment"
             var subheader = document.createElement("H5");
-            subheader.innerText = "What would you like to comment on " + ta.value.substring(start, end);
+            subheader.innerText = 'What would you like to comment on "' + ta.value.substring(start, end) + '"?';
             var comment = document.createElement("INPUT");
             comment.type = "text";
             comment.id = "comment";
@@ -69,4 +107,8 @@ var submitComments = function() {
     xhr.onload = function() {
     };
     xhr.send("data=" + JSON.stringify(comments));
+}
+
+var showedit = function(e) {
+    alert(e.target);
 }
