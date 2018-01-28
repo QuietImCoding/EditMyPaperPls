@@ -48,9 +48,11 @@ def getAuthorName(author_id):
     result = cur.fetchone()
     return result[0]
 
+
 def getUserID(username):
-    cur.execute("SELECT ID FROM ACCOUNTS WHERE USERNAME = ?", (username,))
+    cur.execute("SELECT ID FROM ACCOUNTS WHERE USRNAME = ?", (username,))
     result = cur.fetchone()
+    print("FOUND USER WITH ID", str(result))
     return result[0]
 
 def getEssay(paper_id):
