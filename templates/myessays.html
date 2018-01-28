@@ -16,7 +16,7 @@
 <h2>My Essays</h2>
 <div id="content">
     <ul>
-        {% for essays in myessays %}
+        {% for essay in myessays %}
         <li> <a href="/essay/{{essay['id']}}">{{essay['title']}}</a> </li>
         {% endfor %}
     </ul>
