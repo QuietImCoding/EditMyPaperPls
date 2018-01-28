@@ -1,17 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-body{
+
+@media only screen and (max-width: 700px) {
+    body{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     display: grid;
     min-height:100%;
     min-width:100%;
-    margin:0;
     padding:0;
-    height: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 30% 70%;
-    grid-gap: 10px;
     grid-template-areas: "header"
         "content"
 }
@@ -22,16 +21,19 @@ html{
 }
 nav{
     display:inline;
-    padding: 30px;
     width: 100%;
     height:100%;
-    border-bottom: 5px solid #9EE493;
+
+    background-color: #9EE493;
 }
 header{
-    margin:20px;
+    background-color: #9EE493;
+    margin:0px;
+    width:100%;
+    border-bottom: 3px solid #9EE493;
 }
 .especial{
-    margin: 100px; border: 5px solid white; border-radius: 45px; padding: 100px; background-color:white; opacity:.5;  background-blend-mode: luminosity;
+     margin: 100px; border: 5px solid #9EE493; border-radius: 45px; padding: 30px; background-color:white;
 }
 textarea{
  width:70%;
@@ -40,10 +42,10 @@ textarea{
 
 nav a{
     text-decoration: none;
-    padding: 30px;
-    padding-top:30px;
-
-    color: #9EE493;
+    color: white;
+    padding:10px;
+    width: 100%;
+    border-top: 2px solid white;
 
 }
 
@@ -51,12 +53,14 @@ a h1{
     text-decoration: none;
     font-weight:normal;
     font-size: 2em;
-    display:inline;
-    padding: 20px;
-    color: #9EE493;
+    color: white;
+    width:100%;
 }
 h2{
     color:#70566D;
+}
+h1{
+    color: #9EE493;
 }
 h3{
     color: #272727;
@@ -73,13 +77,21 @@ a{
     color: #ABC8C0;
     text-decoration: none;
 }
+#buttonholder{
+     margin: 20px;
+     padding:20px;
+     height: 50%;
+
+
+}
 .button{
     margin: 20px;
     padding: 20px 30px;
-    background-color:#539987;
+    background-color:#9EE493;
     border-radius:10px;
     color: white;
     text-decoration:none;
+
 }
 p{
 
@@ -121,6 +133,150 @@ li{
     min-height:100%;
     text-align:center;
     display: grid;
+    grid-area-template: "bestbois"
+                          "you" ;
+    grid-template-columns:  100%;
+    grid-template-rows: 50% 50%;
+    grid-gap: 10px;
+    margin: 20px;
+}
+#bestbois{
+
+}
+}
+@media only screen and (min-width: 701px) {
+    body{
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    display: grid;
+    min-height:100%;
+    min-width:100%;
+    padding:0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30% 70%;
+    grid-gap: 10px;
+    grid-template-areas: "header"
+        "content"
+}
+html{
+    font-family: 'Quicksand', sans-serif;
+    min-width:100%;
+    min-height:100%;
+}
+nav{
+    display:inline;
+    padding: 30px;
+    width: 100%;
+    height:100%;
+    border-bottom: 5px solid #9EE493;
+}
+header{
+    margin:20px;
+}
+.especial{
+     margin: 100px; border: 5px solid #9EE493; border-radius: 45px; padding: 30px; background-color:white;
+}
+textarea{
+ width:70%;
+ height:100%;
+}
+
+nav a{
+    text-decoration: none;
+    padding: 30px;
+    padding-top:30px;
+
+    color: #9EE493;
+
+}
+
+a h1{
+    text-decoration: none;
+    font-weight:normal;
+    font-size: 2em;
+    display:inline;
+    padding: 20px;
+    color: #9EE493;
+}
+h2{
+    color:#70566D;
+}
+h1{
+    color: #9EE493;
+}
+h3{
+    color: #272727;
+}
+a h2{
+    color: #ABC8C0;
+    text-decoration: none;
+}
+a h3{
+    color: #ABC8C0;
+    text-decoration: none;
+}
+a{
+    color: #ABC8C0;
+    text-decoration: none;
+}
+#buttonholder{
+     margin: 20px;
+     padding:20px;
+     height: 50%;
+
+
+}
+.button{
+    margin: 20px;
+    padding: 20px 30px;
+    background-color:#9EE493;
+    border-radius:10px;
+    color: white;
+    text-decoration:none;
+
+}
+p{
+
+}
+ul{
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+    list-style:none;
+
+}
+#essay{
+    min-height:100%;
+    text-align:center;
+    display: grid;
+    grid-area-template: "editpls"  "show"  "blank";
+    grid-template-columns:  25% 50% 25%;
+    grid-template-rows: 100%;
+    grid-gap: 10px;
+    margin: 20px;
+}
+#editpls{
+    border-right: 1px solid #ABC8C0;
+}
+#show{
+    text-align:left;
+}
+#wow{
+    width:66%;
+    text-align:left;
+    padding: 30px;
+}
+#content{
+    margin-left:40px;
+    margin-right:40px;
+}
+#bois{
+    min-height:100%;
+    text-align:center;
+    display: grid;
     grid-area-template: "bestbois"  "you" ;
     grid-template-columns:  50% 50%;
     grid-template-rows: 100%;
@@ -129,4 +285,5 @@ li{
 }
 #bestbois{
 
+}
 }
