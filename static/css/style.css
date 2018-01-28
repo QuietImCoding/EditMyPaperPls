@@ -117,3 +117,16 @@ li{
     margin-left:40px;
     margin-right:40px;
 }
+#bois{
+    min-height:100%;
+    text-align:center;
+    display: grid;
+    grid-area-template: "bestbois"  "you" ;
+    grid-template-columns:  50% 50%;
+    grid-template-rows: 100%;
+    grid-gap: 10px;
+    margin: 20px;
+}
+#bestbois{
+
+}
