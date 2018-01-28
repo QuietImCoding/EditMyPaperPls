@@ -143,8 +143,7 @@ li{
 }
 #show{
     padding:30px;
-    text-align:left;
-    max-width:300px;
+    text-align:center;
 }
 #wow{
 
@@ -165,6 +164,10 @@ pre{
     grid-template-columns:  100%;
     grid-template-rows: 50% 50%;
 }
+.masespecial{
+    background-color: #9EE493;
+    color:white;
+}
 #bestbois{
 
 }
@@ -181,7 +184,12 @@ pre{
 
 
 
-@media only screen and (min-width: 926px) {
+@media only screen and (min-width: 926px)
+{
+.masespecial{
+    background-color: #9EE493;
+    color:white;
+}
 body{
     min-width:100%
     align:center;
