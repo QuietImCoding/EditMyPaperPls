@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 
-@media only screen and (max-width: 700px) {
-    body{
+@media only screen and (max-width: 925px) {
+body{
+    min-width:100%
+    align:center;
+    margin:0;
+    padding: 0;
+}
+    wrapper{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     display: grid;
     min-height:100%;
-    min-width:100%;
-    padding:0;
+    width: 100%;
+    min-height: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 30% 70%;
@@ -18,43 +24,56 @@ html{
     font-family: 'Quicksand', sans-serif;
     min-width:100%;
     min-height:100%;
+    align:center;
 }
+
 nav{
     display:inline;
     width: 100%;
     height:100%;
-
+    padding:0;
+    margin:0;
     background-color: #9EE493;
 }
 header{
+ grid-area:header;
     background-color: #9EE493;
     margin:0px;
+    padding:0;
+    padding-bottom: 10px;
     width:100%;
-    border-bottom: 3px solid #9EE493;
+    border-bottom: 1px solid #9EE493;
 }
 .especial{
-     margin: 100px; border: 5px solid #9EE493; border-radius: 45px; padding: 30px; background-color:white;
-}
+     text-align:center;
+     }
 textarea{
  width:70%;
  height:100%;
+ margin:20px;
 }
 
 nav a{
     text-decoration: none;
     color: white;
     padding:10px;
+   padding-bottom:30px;
     width: 100%;
     border-top: 2px solid white;
 
 }
-
+.especial h1{
+padding-bottom:10px;
+border-bottom: 3px solid;}
 a h1{
     text-decoration: none;
     font-weight:normal;
     font-size: 2em;
     color: white;
     width:100%;
+    margin:none;
+    padding:none;
+    display:block;
 }
 h2{
     color:#70566D;
@@ -66,31 +85,33 @@ h3{
     color: #272727;
 }
 a h2{
-    color: #ABC8C0;
+    color: #336699;
     text-decoration: none;
 }
 a h3{
-    color: #ABC8C0;
+    color: #336699;
     text-decoration: none;
 }
+
 a{
-    color: #ABC8C0;
+    color: #336699;
     text-decoration: none;
 }
 #buttonholder{
-     margin: 20px;
-     padding:20px;
      height: 50%;
-
+    display:block;
 
 }
+#content{
+    grid-area:content;
+    width:100%;
+}
 .button{
-    margin: 20px;
     padding: 20px 30px;
-    background-color:#9EE493;
-    border-radius:10px;
-    color: white;
+    color: #9EE493;
     text-decoration:none;
+    width:100%;
+    font-size: 2em;
 
 }
 p{
@@ -105,29 +126,31 @@ li{
 
 }
 #essay{
+    width:100%;
     min-height:100%;
     text-align:center;
-    display: grid;
-    grid-area-template: "editpls"  "show" ;
-    grid-template-columns:  25% 75%;
-    grid-template-rows: 100%;
-    grid-gap: 10px;
-    margin: 20px;
+    display: block;
 }
 #editpls{
-    border-right: 1px solid #ABC8C0;
+    border-bottom: 1px solid #ABC8C0;
+    overflow: auto;
+}
+#blank{
 }
 #show{
+    padding:30px;
     text-align:left;
+    max-width:300px;
 }
 #wow{
-    width:66%;
+
     text-align:left;
-    padding: 30px;
+    display:block;
 }
 #content{
-    margin-left:40px;
-    margin-right:40px;
+}
+pre{
+    white-space: pre-wrap;
 }
 #bois{
     min-height:100%;
@@ -137,22 +160,39 @@ li{
                           "you" ;
     grid-template-columns:  100%;
     grid-template-rows: 50% 50%;
-    grid-gap: 10px;
-    margin: 20px;
 }
 #bestbois{
 
 }
 }
-@media only screen and (min-width: 701px) {
-    body{
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 926px) {
+body{
+    min-width:100%
+    align:center;
+    margin:0;
+    padding: 0;
+}
+    wrapper{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
     display: grid;
     min-height:100%;
-    min-width:100%;
-    padding:0;
-    height: 100%;
+    width: 90%;
+    margin-right:5%;
+    margin-left:5%;
+    min-height: 100%;
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 30% 70%;
@@ -164,16 +204,16 @@ html{
     font-family: 'Quicksand', sans-serif;
     min-width:100%;
     min-height:100%;
+    align:center;
 }
 nav{
     display:inline;
-    padding: 30px;
     width: 100%;
     height:100%;
     border-bottom: 5px solid #9EE493;
+    padding-bottom: 10px;
 }
 header{
-    margin:20px;
 }
 .especial{
      margin: 100px; border: 5px solid #9EE493; border-radius: 45px; padding: 30px; background-color:white;
@@ -181,13 +221,14 @@ header{
 textarea{
  width:70%;
  height:100%;
+ margin:20px;
 }
 
 nav a{
     text-decoration: none;
     padding: 30px;
     padding-top:30px;
-
+    display:inline;
     color: #9EE493;
 
 }
@@ -197,7 +238,6 @@ a h1{
     font-weight:normal;
     font-size: 2em;
     display:inline;
-    padding: 20px;
     color: #9EE493;
 }
 h2{
@@ -210,16 +250,13 @@ h3{
     color: #272727;
 }
 a h2{
-    color: #ABC8C0;
-    text-decoration: none;
+    color: #336699;
 }
 a h3{
-    color: #ABC8C0;
-    text-decoration: none;
+    color: #336699;
 }
 a{
-    color: #ABC8C0;
-    text-decoration: none;
+    color: #336699;
 }
 #buttonholder{
      margin: 20px;
@@ -266,9 +303,10 @@ li{
     overflow:auto;
 }
 #wow{
-    width:66%;
+    width:100%;
     text-align:left;
     padding: 30px;
+    overflow:auto;
 }
 #content{
     margin-left:40px;
@@ -284,6 +322,10 @@ li{
     grid-gap: 10px;
     margin: 20px;
 }
+pre{
+    white-space: pre-wrap;
+}
+
 #bestbois{
 
 }
