@@ -85,6 +85,11 @@ def getEditsForPaper(paper_id):
     cur.execute("SELECT EDITOR FROM EDITS WHERE PAPER = ?", (paper_id,))
     editors =[]
     for editor in cur.fetchall():
-        if editor[0] not in editors:
+        if getAuthorName(editor[0]) not in editors:
             editors.append(getAuthorName(editor[0]))
     return [{"author":editor} for editor in editors]
+
+def getEditsForAuthor(paper, author):
+    cur.execute("SELECT * FROM EDITS WHERE PAPER = ? AND EDITOR = ?", (paper, getUserID(author)))
+    edits = [{"start":edit[1], "end":edit[2], "comment":edit[4]} for edit in cur.fetchall()]
+    return edits
