@@ -43,7 +43,22 @@ def getPWHash(uname):
     else:
         return result
 
+def getAuthorName(author_id):
+    cur.execute("SELECT USRNAME FROM ACCOUNTS WHERE ID = ?", (author_id,))
+    result = cur.fetchone()
+    return result[0]
+
+def getUserID(username):
+    cur.execute("SELECT ID FROM ACCOUNTS WHERE USERNAME = ?", (username,))
+    result = cur.fetchone()
+    return result[0]
 
 def getEssay(paper_id):
     cur.execute("SELECT * FROM PAPERS WHERE PAPER_ID = ?", (paper_id,))
     result = cur.fetchone()
+    essay = {}
+    essay["title"] = result[2]
+    essay["content"] = result[3]
+    essay["author"] = getAuthorName(result[1])
+    print(result)
+    return essay

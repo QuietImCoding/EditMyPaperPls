@@ -57,6 +57,16 @@ def signup():
 def upload():
     if request.method == "GET":
         return render_template("upload.html")
+    elif request.method == "POST":
+        title = request.form["title"]
+        content = request.form["content"]
+        db.execQuery("INSERT INTO PAPERS VALUES (?, ?, ?, ?)", (db.getNewId("PAPERS"), db.getUserID(session["username"]), title, content))
+        return redirect("/activity")
+
+@app.route("/activity")
+def activity():
+    return render_template("activity.html")
+
 
 @app.route("/showaccounts")
 def accounts():
