@@ -17,7 +17,7 @@
 <div id="content">
     <ul>
         {% for essay in myedits %}
-        <li> <a href="{{essay.link}}">{{essay.title}}</a> </li>
+        <li> <a href="/essay/{{essay['id']}}">{{essay['title']}}</a> </li>
         {% end for %}
     </ul>
 
