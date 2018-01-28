@@ -34,10 +34,11 @@ var sendTehRequestForEdits = function(author) {
         offset = 0;
         for (var i = 0; i < obj.length; i++) {
             var spantag = '<span class="edited" id="' + i + '">'
-            modified = modified.substring(0, obj[i].start + offset) + spantag +
-             modified.substring(obj[i].start+1 + offset, obj[i].end + offset) +
-             '</span>' + modified.substring(obj[i].end + 1 + offset, modified.length-1)
+            modified = modified.substring(0, obj[i].start + offset + 1) + spantag +
+             modified.substring(obj[i].start+ offset, obj[i].end + offset + 1) +
+             '</span>' + modified.substring(obj[i].end + offset + 1, modified.length)
              offset += spantag.length + 7;
+             loadedComments.push(obj[i].comment);
         }
         console.log(modified);
     };
