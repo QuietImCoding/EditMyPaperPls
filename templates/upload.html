@@ -16,11 +16,13 @@
 <body>
     <h2>Upload</h2>
     <div class="content">
-        <input type="text" name="title" form="uploadform">
-        <textarea name= "content"  form="uploadform">
-            Copy paste your essay in plain text here...
+        <p>Title:</p>
+        <input type="text" placeholder= "title" name="title" form="uploadform">
+        <br/>
+        <textarea name= "content" placeholder="Copy paste your essay in plain text here..." form="uploadform">
+
         </textarea>
-        <form action="/uploadpls" id="uploadform" method="POST">
+        <form action="/upload" id="uploadform" method="POST">
             <input type="submit" name = "submit">
         </form>
 
