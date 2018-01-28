@@ -70,3 +70,7 @@ var submitComments = function() {
     };
     xhr.send("data=" + JSON.stringify(comments));
 }
+
+var showedit = function(e) {
+    alert(e.target);
+}
