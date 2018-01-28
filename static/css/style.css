@@ -167,6 +167,7 @@ pre{
 .masespecial{
     background-color: #9EE493;
     color:white;
+    cursor:pointer;
 }
 #bestbois{
 
@@ -189,6 +190,7 @@ pre{
 .masespecial{
     background-color: #9EE493;
     color:white;
+    cursor: pointer;
 }
 body{
     min-width:100%
