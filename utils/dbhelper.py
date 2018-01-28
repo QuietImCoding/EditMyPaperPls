@@ -64,3 +64,9 @@ def getEssay(paper_id):
     essay["author"] = getAuthorName(result[1])
     print(result)
     return essay
+
+def getEsssayList():
+    cur.execute("SELECT * FROM PAPERS")
+    result = cur.fetchall()
+    papers = [{"id" : paper[0], "title" : paper[2]} for paper in result]
+    return papers

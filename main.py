@@ -32,9 +32,13 @@ def login():
         else:
             return redirect("/home")
 
-@app.route("/edit/<paper_id>")
-def edit(paper_id):
+@app.route("/essay/<paper_id>")
+def showessay(paper_id):
     return render_template("essay.html", essay = db.getEssay(paper_id))
+
+@app.route("/edit")
+def edit():
+    return render_template("edit.html", allessays = db.getEsssayList())
 
 @app.route("/home")
 def home():
