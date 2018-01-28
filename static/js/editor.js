@@ -73,6 +73,7 @@ editbtn.onclick = function(e) {
         ta.value = content.innerHTML;
         var numlines = ta.value.split("\n").length;
         ta.onselect = function(e) {
+            console.log(e);
             start = e.originalTarget.selectionStart;
             end = e.originalTarget.selectionEnd;
             console.log(ta.value.substring(start, end));
