@@ -74,8 +74,8 @@ editbtn.onclick = function(e) {
         var numlines = ta.value.split("\n").length;
         ta.onselect = function(e) {
             console.log(e);
-            start = e.originalTarget.selectionStart;
-            end = e.originalTarget.selectionEnd;
+            start = e.target.selectionStart;
+            end = e.target.selectionEnd;
             console.log(ta.value.substring(start, end));
             var commentdiv = document.getElementById("blank");
             commentdiv.innerHTML = "";
