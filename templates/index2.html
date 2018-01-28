@@ -1,8 +1,22 @@
 {% extends "layout.html" %}
 {% block page %}Home{% endblock %}
 {% block content %}
-    <h2>Welcome {{name}}!</h2>
-    <h3>You have {{numnotifications}} notifications.</h3>
-    <p>Total Points: {{mypoints}}</p>
-    <p>Essays Submitted: {{numessays}}</p>
+<h2>Welcome {{name}}!</h2>
+<div id="bois">
+    <div id="bestbois">
+        <h3>Featured Editors</h3>
+        <ol>
+         {% for user in best %}
+            <li> {{user['name']}} with {{user['points']}} points</li>
+            {% endfor %}
+        </ol>
+
+    </div>
+    <div id="you">
+            <h3>Your Info</h3>
+            <p>Total Points: {{mypoints}}</p>
+            <p>Essays Submitted: {{numessays}}</p>
+            </div>
+</div>
+
 {% endblock %}
