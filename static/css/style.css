@@ -333,13 +333,14 @@ li{
     text-align:center;
     display: grid;
     grid-area-template: "editpls"  "show"  "blank";
-    grid-template-columns:  25% 50% 25%;
+    grid-template-columns:  25% 50% 20%;
     grid-template-rows: 100%;
-    grid-gap: 10px;
-    margin: 20px;
+    grid-gap: 2.5%;
 }
 #blank{
-display:block;
+        overflow: auto;
+        text-align:left;
+        margin:10px;
 }
 #editpls{
     border-right: 1px solid #ABC8C0;
