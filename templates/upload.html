@@ -10,16 +10,17 @@
             <a href="/"> <h1>Edit My Paper Pls</h1> </a>
             <a href="/activity"> My Activity </a>
             <a href="/edit"> Edit </a>
-            <a href="/upload"> Upload </a>
+            <a href="/logoff"> Logout </a>
         </nav>
 </header>
 <body>
     <h2>Upload</h2>
     <div class="content">
+        <input type="text" name="title" form="uploadform">
         <textarea name= "content"  form="uploadform">
-            Copy past your essay in plain text here...
+            Copy paste your essay in plain text here...
         </textarea>
-        <form action="/uploadpls" id="uploadform">
+        <form action="/uploadpls" id="uploadform" method="POST">
             <input type="submit" name = "submit">
         </form>
 
