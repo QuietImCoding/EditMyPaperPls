@@ -123,8 +123,9 @@ editbtn.onclick = function(e) {
         commentdiv.innerHTML = "";
         if (comments.length > 0) {
             submitComments();
+
         }
-        content.innerHTML = content.firstChild.value;
+        //content.innerHTML = content.firstChild.value;
     }
 }
 
@@ -133,6 +134,7 @@ var submitComments = function() {
     xhr.open('POST', "/addcomments", true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
+        window.location.reload(true);
     };
     xhr.send("data=" + JSON.stringify(comments));
 }

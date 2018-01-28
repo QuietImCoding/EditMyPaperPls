@@ -1,3 +1,4 @@
+import re
 from flask import Flask, render_template, session, request, redirect, json
 from utils import dbhelper as db
 import bcrypt
@@ -68,10 +69,11 @@ def upload():
         return render_template("upload.html")
     elif request.method == "POST":
         title = request.form["title"]
-        content = request.form["content"]
+        content = re.sub('<[^<]+?>', '', request.form["content"])
+
         newId = db.getNewId("PAPERS")
         db.execQuery("INSERT INTO PAPERS VALUES (?, ?, ?, ?)", (newId, db.getUserID(session["username"]), title, content))
-        return redirect("/activity")
+        return redirect("/myessays")
 
 @app.route("/logoff")
 def logoff():
