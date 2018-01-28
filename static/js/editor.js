@@ -25,7 +25,8 @@ var sendTehRequestForEdits = function(author) {
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onload = function() {
         loadedComments = []
-        var modified = content.innerHTML;
+        var modified = content.innerHTML.replace(/<\/?span[^>]*>/g,"");;
+        content.innerHTML = modified;
         var obj = JSON.parse(this.responseText);
         obj.sort(function(a, b) {
             return(a.start - b.start);
@@ -33,14 +34,25 @@ var sendTehRequestForEdits = function(author) {
         console.log(obj);
         offset = 0;
         for (var i = 0; i < obj.length; i++) {
-            var spantag = '<span class="edited" id="' + i + '">'
-            modified = modified.substring(0, obj[i].start + offset + 1) + spantag +
-             modified.substring(obj[i].start+ offset, obj[i].end + offset + 1) +
-             '</span>' + modified.substring(obj[i].end + offset + 1, modified.length)
+            var spantag = '<span class="masespecial" id="' + i + '">'
+            modified = modified.substring(0, obj[i].start + offset) + spantag +
+             modified.substring(obj[i].start+ offset, obj[i].end + offset ) +
+             '</span>' + modified.substring(obj[i].end + offset, modified.length)
              offset += spantag.length + 7;
              loadedComments.push(obj[i].comment);
         }
-        console.log(modified);
+        content.innerHTML = modified;
+        var special = document.getElementsByClassName("masespecial");
+        for (var i = 0; i < special.length; i++) {
+            special[i].onclick = function(e) {
+                var commentdiv = document.getElementById("blank");
+                commentdiv.innerHTML = "";
+                var header = document.createElement("H3");
+                header.innerText = 'Comment on "' + e.target.innerText + '"';
+                var subheader = document.createElement("H5");
+                subheader.innerText = loadedComments[Number(e.target.id)];
+            }
+        }
     };
     xhr.send("paper=" + page + "&author=" + author);
 };
@@ -49,6 +61,8 @@ var sendTehRequestForEdits = function(author) {
 editbtn.onclick = function(e) {
     editing = !editing;
     if (editing) {
+        var modified = content.innerHTML.replace(/<\/?span[^>]*>/g,"");;
+        content.innerHTML = modified;
         editbtn.innerText = "Cancel Editing";
         var ta = document.createElement("TEXTAREA");
         ta.style.width = content.offsetWidth + "px";
