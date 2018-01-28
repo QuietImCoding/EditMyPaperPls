@@ -263,6 +263,7 @@ li{
 }
 #show{
     text-align:left;
+    overflow:auto;
 }
 #wow{
     width:66%;
