@@ -7,6 +7,10 @@ body{
     margin:0;
     padding: 0;
 }
+#form{
+text-align:center;
+width:100%;
+}
     wrapper{
     font-family: 'Quicksand', sans-serif;
     text-align: center;
@@ -190,6 +194,7 @@ body{
     display: grid;
     min-height:100%;
     width: 90%;
+    max-width: 1500px;
     margin-right:5%;
     margin-left:5%;
     min-height: 100%;
@@ -319,6 +324,10 @@ li{
     grid-template-rows: 100%;
     grid-gap: 10px;
     margin: 20px;
+}
+#form{
+text-align:center;
+width:100%;
 }
 pre{
     white-space: pre-wrap;
