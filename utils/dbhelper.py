@@ -86,5 +86,5 @@ def getEditsForPaper(paper_id):
     editors =[]
     for editor in cur.fetchall():
         if editor[0] not in editors:
-            editors.append(editor[0])
+            editors.append(getAuthorName(editor[0]))
     return [{"author":editor} for editor in editors]

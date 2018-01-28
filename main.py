@@ -33,6 +33,8 @@ def login():
 
 @app.route("/essay/<paper_id>")
 def showessay(paper_id):
+    edits = db.getEditsForPaper(paper_id)
+    print(edits)
     return render_template("essay.html", essay = db.getEssay(paper_id), edits = db.getEditsForPaper(paper_id))
 
 @app.route("/edit")
