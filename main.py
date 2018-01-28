@@ -47,7 +47,7 @@ def myessays():
 
 @app.route("/home")
 def home():
-    return render_template("index2.html", name = session["username"], mypoints = db.getPointsForUser(session["username"]), numessays = len(db.getEssaysByUser(session["username"])))
+    return render_template("index2.html", best = db.getFeaturedEditors(5), name = session["username"], mypoints = db.getPointsForUser(session["username"]), numessays = len(db.getEssaysByUser(session["username"])))
 
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():
@@ -88,6 +88,7 @@ def addcomments():
     for comment in data:
         db.execQuery("INSERT INTO EDITS VALUES (?, ?, ?, ?, ?, ?)",
                      (db.getNewId("EDITS"), comment["start"], comment["end"], db.getUserID(session["username"]), comment["content"], comment["page"]))
+    db.addPointsFor(db.getUserID(session["username"]), len(data))
     return(str(data))
 
 @app.route("/showaccounts")

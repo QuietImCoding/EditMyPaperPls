@@ -55,6 +55,11 @@ def getUserID(username):
     print("FOUND USER WITH ID", str(result))
     return result[0]
 
+def addPointsFor(user_id, amount):
+    cur.execute("SELECT POINTS FROM ACCOUNTS WHERE ID = ?", (user_id,))
+    points = int(cur.fetchone()[0])
+    execQuery("UPDATE ACCOUNTS SET POINTS = ? WHERE ID = ?", (points + amount, user_id))
+
 def getEssay(paper_id):
     cur.execute("SELECT * FROM PAPERS WHERE PAPER_ID = ?", (paper_id,))
     result = cur.fetchone()
@@ -93,3 +98,7 @@ def getEditsForAuthor(paper, author):
     cur.execute("SELECT * FROM EDITS WHERE PAPER = ? AND EDITOR = ?", (paper, getUserID(author)))
     edits = [{"start":edit[1], "end":edit[2], "comment":edit[4]} for edit in cur.fetchall()]
     return edits
+
+def getFeaturedEditors(amt):
+    cur.execute("SELECT USRNAME, POINTS FROM ACCOUNTS ORDER BY POINTS DESC LIMIT 5")
+    return [{"name":user[0], "points":user[1]} for user in cur.fetchall()]
