@@ -60,7 +60,9 @@ def upload():
     elif request.method == "POST":
         title = request.form["title"]
         content = request.form["content"]
-        db.execQuery("INSERT INTO PAPERS VALUES (?, ?, ?, ?)", (db.getNewId("PAPERS"), db.getUserID(session["username"]), title, content))
+        newId = db.getNewId("PAPERS")
+        db.execQuery("INSERT INTO PAPERS VALUES (?, ?, ?, ?)", (newId, db.getUserID(session["username"]), title, content))
+        print(newId)
         return redirect("/activity")
 
 @app.route("/activity")
