@@ -46,7 +46,7 @@ def myessays():
 
 @app.route("/home")
 def home():
-    return render_template("index2.html")
+    return render_template("index2.html", mypoints = db.getPointsForUser(session["username"]), numessays = len(db.getEssaysByUser(session["username"])))
 
 @app.route("/signup", methods = ['GET', 'POST'])
 def signup():

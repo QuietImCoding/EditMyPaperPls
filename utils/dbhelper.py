@@ -76,3 +76,8 @@ def getEssaysByUser(user):
     result = cur.fetchall()
     papers = [{"id": paper[0], "title": paper[2]} for paper in result]
     return papers
+
+def getPointsForUser(user):
+    cur.execute("SELECT POINTS FROM ACCOUNTS WHERE USRNAME = ?", (user,))
+    result = cur.fetchone()
+    return result[0]
