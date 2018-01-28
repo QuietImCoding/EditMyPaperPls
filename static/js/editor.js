@@ -45,12 +45,15 @@ var sendTehRequestForEdits = function(author) {
         var special = document.getElementsByClassName("masespecial");
         for (var i = 0; i < special.length; i++) {
             special[i].onclick = function(e) {
+                console.log("YOINEKD");
                 var commentdiv = document.getElementById("blank");
                 commentdiv.innerHTML = "";
                 var header = document.createElement("H3");
                 header.innerText = 'Comment on "' + e.target.innerText + '"';
                 var subheader = document.createElement("H5");
                 subheader.innerText = loadedComments[Number(e.target.id)];
+                commentdiv.appendChild(header);
+                commentdiv.appendChild(subheader);
             }
         }
     };
