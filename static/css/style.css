@@ -41,12 +41,12 @@ nav{
 }
 header{
  grid-area:header;
-    background-color: #9EE493;
-    margin:0px;
-    padding:0;
-    padding-bottom: 10px;
-    width:100%;
-    border-bottom: 1px solid #9EE493;
+background-color: #9EE493;
+margin:0px;
+padding:0;
+padding-bottom: 10px;
+width:100%;
+border-bottom: 1px solid #9EE493;
 }
 .especial{
      text-align:center;
@@ -96,6 +96,7 @@ a h3{
 }
 
 a{
+
     color: #336699;
     margin:10px;
 }
@@ -229,6 +230,8 @@ nav{
 header{
  margin-top: 20px;
  margin-bottom: 20px;
+ display:block;
+
 }
 .especial{
      text-align: center; margin: 100px; border: 5px solid #9EE493; border-radius: 45px; padding: 30px; background-color:white;
