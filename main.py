@@ -73,10 +73,6 @@ def upload():
         db.execQuery("INSERT INTO PAPERS VALUES (?, ?, ?, ?)", (newId, db.getUserID(session["username"]), title, content))
         return redirect("/activity")
 
-@app.route("/activity")
-def activity():
-    return render_template("activity.html")
-
 @app.route("/logoff")
 def logoff():
     session.pop("username")
