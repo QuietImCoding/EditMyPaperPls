@@ -5,11 +5,9 @@
 <div id="bois">
     <div id="bestbois">
         <h3>Featured Editors</h3>
-        <ol>
          {% for user in best %}
-            <li> {{user['name']}} with {{user['points']}} points</li>
+            <p> {{user['name']}} with {{user['points']}} points</p>
             {% endfor %}
-        </ol>
 
     </div>
     <div id="you">
