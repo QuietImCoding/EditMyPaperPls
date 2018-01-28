@@ -14,9 +14,17 @@ var editbtn = document.getElementById("edit");
 
 for (var i = 0; i < editors.length; i++) {
     editors[i].onclick = function(e) {
+        makeInactive(editors);
+        e.target.classList.add("active")
         sendTehRequestForEdits(e.target.id);
     }
 }
+
+var makeInactive = function(items) {
+    for(var i = 0 ; i < items.length; i++) {
+        items[i].classList.remove("active");
+    }
+};
 
 var loadedComments;
 var sendTehRequestForEdits = function(author) {
@@ -88,7 +96,6 @@ editbtn.onclick = function(e) {
             comment.type = "text";
             comment.id = "comment";
             var addcommentbutton = document.createElement("BUTTON");
-            //addcommentbutton.value = "ADD COMMENT";
             addcommentbutton.innerText = "ADD COMMENT";
             addcommentbutton.onclick = function(e) {
                 if (comment.value.length > 0) {
