@@ -106,10 +106,12 @@ li{
     border-right: 1px solid #ABC8C0;
 }
 #show{
-    align-left;
+    text-align:left;
 }
 #wow{
     width:66%;
+    text-align:left;
+    padding: 30px;
 }
 #content{
     margin-left:40px;
