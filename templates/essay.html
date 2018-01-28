@@ -2,15 +2,8 @@
 {% extends "layout.html" %}
 {% block page %}Essay{% endblock %}
 {% block content %}
-<div style="display: inline-block;">
-    <div style="width=70%;">
-        <h2>{{essay["title"]}}</h2>
-        <h3>{{essay["author"]}}</h3>
-        <div>
-            <p>{{essay["contents"]}}</p>
-        </div>
-    </div>
-    <div style="width=30%;">
+<div id="essay">
+    <div id="editpls">
          <ul>
         {% for edit in edits %}
         <li> <a href="" id="{{edit['author']}}" onclick="showedit">{{edit['author']}}</a> </li>
@@ -18,6 +11,18 @@
              <li><a href="">Edit</a></li>
     </ul>
     </div>
+    <div id="show">
+        <div id="wow">
+            <h2>{{essay["title"]}}</h2>
+            <h3>{{essay["author"]}}</h3>
+             <div>
+            <p>{{essay["contents"]}}</p>
+             </div>
+        </div>
+
+    </div>
+    <div id="blank"></div>
+
 </div>
 
 {% endblock %}

@@ -55,8 +55,11 @@ a h1{
     padding: 20px;
     color: #9EE493;
 }
-h2,h3{
+h2{
     color:#70566D;
+}
+h3{
+    color: #272727;
 }
 a h2{
     color: #ABC8C0;
@@ -81,6 +84,34 @@ a{
 p{
 
 }
-#content{
+ul{
+    text-decoration: none;
+}
+li{
+    text-decoration: none;
+    list-style:none;
 
+}
+#essay{
+    min-height:100%;
+    text-align:center;
+    display: grid;
+    grid-area-template: "editpls"  "show" ;
+    grid-template-columns:  25% 75%;
+    grid-template-rows: 100%;
+    grid-gap: 10px;
+    margin: 20px;
+}
+#editpls{
+    border-right: 1px solid #ABC8C0;
+}
+#show{
+    align-left;
+}
+#wow{
+    width:66%;
+}
+#content{
+    margin-left:40px;
+    margin-right:40px;
 }
