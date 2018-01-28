@@ -1,4 +1,4 @@
-from flask import Flask, render_template, session, request, redirect
+from flask import Flask, render_template, session, request, redirect, json
 from utils import dbhelper as db
 import bcrypt
 
@@ -81,6 +81,14 @@ def activity():
 def logoff():
     session.pop("username")
     return redirect("/")
+
+@app.route("/addcomments", methods = ["POST"])
+def addcomments():
+    data = json.loads(request.form["data"])
+    for comment in data:
+        db.execQuery("INSERT INTO EDITS VALUES (?, ?, ?, ?, ?, ?)",
+                     (db.getNewId("EDITS"), comment["start"], comment["end"], db.getUserID(session["username"]), comment["content"], comment["page"]))
+    return(str(data))
 
 @app.route("/showaccounts")
 def accounts():
