@@ -7,6 +7,10 @@ body{
     margin:0;
     padding: 0;
 }
+.active{
+    color:#70566D !important;
+}
+
 #form{
 text-align:center;
 width:100%;
@@ -157,6 +161,7 @@ li{
 pre{
     white-space: pre-wrap;
 }
+
 #bois{
     min-height:100%;
     text-align:center;
@@ -168,12 +173,13 @@ pre{
 }
 .masespecial{
     background-color: #9EE493;
-    color:white;
+    color:#70566D;
     cursor:pointer;
 }
 #bestbois{
 
 }
+
 }
 
 
@@ -191,7 +197,7 @@ pre{
 {
 .masespecial{
     background-color: #9EE493;
-    color:white;
+    color:#70566D;
     cursor: pointer;
 }
 body{
@@ -216,6 +222,9 @@ body{
     grid-gap: 10px;
     grid-template-areas: "header"
         "content"
+}
+.active{
+    color:#70566D !important;
 }
 html{
     font-family: 'Quicksand', sans-serif;
@@ -320,11 +329,15 @@ li{
     grid-gap: 10px;
     margin: 20px;
 }
+#blank{
+display:block;
+}
 #editpls{
     border-right: 1px solid #ABC8C0;
 }
 #show{
     text-align:left;
+    display:block;
 }
 input{ margin:10px;}
 #wow{
