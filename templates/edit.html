@@ -3,9 +3,9 @@
 {% block page %}Essay{% endblock %}
 {% block content %}
 <h2>Essays that need Editing</h2>
-        <ul>
+
             {% for essay in allessays %}
-            <li> <a href="/essay/{{essay['id']}}">{{essay['title']}}</a> </li>
+             <a href="/essay/{{essay['id']}}">{{essay['title']}}</a> <br />
             {% endfor %}
-        </ul>
+
 {% endblock %}

@@ -90,16 +90,14 @@ h3{
 }
 a h2{
     color: #336699;
-    text-decoration: none;
 }
 a h3{
     color: #336699;
-    text-decoration: none;
 }
 
 a{
     color: #336699;
-    text-decoration: none;
+    margin:10px;
 }
 #buttonholder{
      height: 50%;
@@ -274,6 +272,7 @@ a h3{
 }
 a{
     color: #336699;
+    margin: 10px;
 }
 #buttonholder{
      margin: 20px;
