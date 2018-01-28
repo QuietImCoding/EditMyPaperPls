@@ -1,6 +1,7 @@
 editing = false;
 var start;
 var end;
+var comments = "";
 
 var content = document.getElementById("contents");
 
